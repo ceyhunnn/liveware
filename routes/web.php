@@ -1,6 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Post;
+use App\Http\Livewire\Blog;
+use App\Http\Livewire\Contact;
+use App\Http\Livewire\User;
+use App\Http\Livewire\Student;
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +26,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('post',Post::class);
+Route::get('blog',Blog::class);
+Route::get('contact',Contact::class);
+Route::get('user',User::class);
+Route::get('students',Student::class);
