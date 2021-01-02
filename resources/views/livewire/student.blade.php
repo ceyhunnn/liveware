@@ -15,11 +15,18 @@
                   <div class="alert alert-success">{{session('message')}}</div>
               @endif
               <div class="card-header">
-                Students
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addStudentModal">
-                  Add Student
-                </button>
+                <div class="row">
+                  <div class="col-md-8">
+                    Students
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addStudentModal">
+                      Add Student
+                    </button>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Search. . . . " wire:model="search">
+                  </div>
+                </div>
               </div>
               <div class="card-body">
                 <table class="table">

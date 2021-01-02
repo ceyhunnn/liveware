@@ -11,6 +11,7 @@ class Student extends Component
     public $name;
     public $email;
     public $phone;
+    public $search;
 
     public function resetInputFields() {
       $this->name = '';
@@ -41,9 +42,15 @@ class Student extends Component
       }
     }
 
+    use WithPagination;
+
     public function render()
     {
-        $data['students'] = Students::orderBy('id', 'desc')->paginate(15);
+        $search = '%'.$this->search . '%';
+        $data['students'] = Students::where('name', 'LIKE', $search)
+                                      ->orWhere('email', 'LIKE', $search)
+                                      ->orWhere('phone', 'LIKE', $search)
+                                      ->orderBy('id', 'desc')->paginate(15);
         return view('livewire.student', compact('data'));
     }
 }

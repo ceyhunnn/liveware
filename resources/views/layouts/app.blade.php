@@ -28,6 +28,12 @@
     window.livewire.on('studentDelete', ()=>{
       $('#studentDeleted').modal('hide');
     });
+    window.livewire.on('dblogAdded', ()=>{
+      $('#form-upload')[0].reset();
+    });
+    window.livewire.on('imagesAdded', ()=>{
+      $('#photos-upload')[0].reset();
+    });
   </script>
 
 
